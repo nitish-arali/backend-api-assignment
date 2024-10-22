@@ -5,16 +5,20 @@ import {
   getTopClient,
 } from "../controllers/agencyClient.controller.js";
 import auth from "../middleware/auth.middleware.js";
+import { controllerForGeneratingJWT } from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
-// POST /api/agency-clients - Create Agency and Clients
+// Create Agency and Clients
 router.post("/agency-clients", auth, createAgencyAndClients);
 
-// PUT /api/clients/:clientId - Update Client
+// Update Client
 router.put("/clients/:clientId", auth, updateClient);
 
-// GET /api/top-client - Get Agency and Top Client
+// Get Agency and Top Client
 router.get("/top-client", auth, getTopClient);
+
+//Get AccessToken to be includede in Headers for easy access to api's
+router.get("/get-accessToken", controllerForGeneratingJWT);
 
 export default router;

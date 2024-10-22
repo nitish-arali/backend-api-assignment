@@ -4,7 +4,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const auth = (req, res, next) => {
-  const token = req.header("Authorization");
+  const BearerToken = req.header("Authorization");
+
+  const token = BearerToken.split(" ")[1];
+
   if (!token)
     return res.status(401).json({ msg: "No token, authorization denied" });
 
