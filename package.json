@@ -1,0 +1,20 @@
+{
+  "name": "zerozilla-backend-api-assignment",
+  "version": "1.0.0",
+  "description": "Rest Api Assignment with Express.js and mongodb",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Nitish Arali",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.2",
+    "zod": "^3.23.8"
+  }
+}
